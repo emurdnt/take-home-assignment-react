@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { client } from './client/ApolloClient'
+import { ApolloProvider, gql, useMutation } from '@apollo/client'
+// import Layout from './components/Layout/Layout'
 import './App.css'
-import Layout from './components/Layout/Layout'
+import '../src/assets/Fonts.css'
+import Login from './components/Login/Login'
 
 function App() {
     return (
-        <Layout>
-            <>
-                <p>WTF</p>
-            </>
-        </Layout>
+        <ApolloProvider client={client}>
+            <Login />
+        </ApolloProvider>
     )
 }
 
