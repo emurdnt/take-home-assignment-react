@@ -1,0 +1,20 @@
+.button {
+    width: 328px;
+    height: 40px;
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'source-sans-pro', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.primary {
+    background-color: #9a4ad6;
+    color: #fff;
+}
