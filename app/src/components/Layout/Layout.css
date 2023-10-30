@@ -1,9 +1,14 @@
 .full-width {
-    min-width: 1000vw;
+    min-width: 100vw;
     min-height: 100vh;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* probs needs to be a prop */
 }
 
 .dark {
@@ -14,4 +19,8 @@
 .light {
     background-color: #fff;
     color: #000;
+}
+
+.grey {
+    background-color: #f4f4f4;
 }

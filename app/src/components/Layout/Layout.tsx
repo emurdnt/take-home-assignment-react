@@ -1,9 +1,10 @@
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import './Layout.css'
 
 enum Color {
     dark,
     light,
+    grey,
 }
 
 interface LayoutProps {
@@ -16,11 +17,6 @@ interface LayoutProps {
  * @param backgroundColor accepts 'light' or 'dark'
  * @returns React component
  */
-export default function Layout({ backgroundColor = Color.light, children }: LayoutProps): ReactElement {
-    return (
-        <>
-            {console.log(`Color.${backgroundColor}`)}
-            <div className="full-width light">{children}</div>
-        </>
-    )
+export default function Layout({ backgroundColor = Color.grey, children }: LayoutProps): ReactElement {
+    return <div className="full-width grey">{children}</div>
 }
