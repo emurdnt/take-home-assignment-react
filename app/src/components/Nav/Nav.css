@@ -1,0 +1,31 @@
+.nav-container {
+    height: 50px;
+    min-width: 100%;
+    padding: 8px;
+    background-color: #9a4ad6;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: left;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.link-container {
+    margin: 8px 32px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    color: #fff;
+    font-family: 'source-sans-pro', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    align-self: center;
+}
+
+.link:hover {
+    color: #fefefe;
+}
