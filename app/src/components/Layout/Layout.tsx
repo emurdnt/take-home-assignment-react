@@ -1,22 +1,20 @@
 import React, { ReactElement } from 'react'
 import './Layout.css'
 
-enum Color {
-    dark,
-    light,
-    grey,
-}
-
 interface LayoutProps {
-    backgroundColor?: Color
+    backgroundColor: 'dark' | 'light' | 'grey'
     children?: ReactElement
+    align: 'left' | 'center' | 'right'
 }
 
 /**
- * Layout component to set background colour of the page
- * @param backgroundColor accepts 'light' or 'dark'
+ * Layout component to set wrapper of the page
+ * @param backgroundColor accepts 'light', 'dark', or 'grey'
+ * @param align accepts 'left', 'center', or 'right'
  * @returns React component
  */
-export default function Layout({ backgroundColor = Color.grey, children }: LayoutProps): ReactElement {
-    return <div className="full-width grey">{children}</div>
+const Layout = ({ backgroundColor = 'grey', children, align = 'center' }: LayoutProps): ReactElement => {
+    return <div className={`full-width ${backgroundColor} ${align}`}>{children}</div>
 }
+
+export default Layout

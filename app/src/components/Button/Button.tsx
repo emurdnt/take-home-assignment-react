@@ -5,7 +5,7 @@ interface ButtonProps {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
     children?: React.ReactNode
     color?: 'primary' | 'secondary'
-    disabled?: boolean // make the button disabled or not
+    disabled?: boolean
 }
 
 export const Button = ({ onClick, children, color = 'primary', disabled }: ButtonProps) => {

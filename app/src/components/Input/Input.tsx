@@ -12,7 +12,12 @@ interface InputProps {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Input: FC<InputProps> = ({ type, label, value, name, placeholder, error, disabled, onChange }) => {
+/**
+ *
+ * @param param0
+ * @returns
+ */
+const Input: FC<InputProps> = ({ type, label, value, name, placeholder, error, disabled, onChange }: InputProps) => {
     return (
         <div className="input-wrapper">
             <label htmlFor={label} className="label">

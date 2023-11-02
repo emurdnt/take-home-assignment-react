@@ -1,49 +1,67 @@
-import React, { useState } from 'react'
-import { ApolloProvider, gql, useMutation } from '@apollo/client'
+import React, { useState, useContext } from 'react'
+import { gql, useMutation } from '@apollo/client'
 import Input from '../../components/Input/Input'
 import Layout from '../../components/Layout/Layout'
 import { Button } from '../../components/Button/Button'
 import logo from '../../assets/Logo@2x.png'
 import './Login.css'
+import { useForm } from '../../utilities/useForm'
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../context/authContext'
 
-const LOGIN_MUTATION = gql`
-    mutation LoginMutation($email: String!, $password: String!) {
-        login(email: $email, password: $password) {
-            token
+//need cleanup and error handling
+
+const LOGIN_USER = gql`
+    mutation {
+        authenticate(email: "bob@example.com", password: "password") {
+            accessToken
+            refreshToken
+            expiresAt
         }
     }
 `
 const Login = () => {
-    const [formState, setFormState] = useState({
-        email: 'bob@example.com',
-        password: 'password',
-    })
+    const context = useContext(AuthContext)
+    let navigate = useNavigate()
+    const [errors, setErrors] = useState([])
+    const [disable, setDisabled] = useState(false)
 
-    const [login] = useMutation(LOGIN_MUTATION, {
-        variables: {
-            email: formState.email,
-            password: formState.password,
-        },
-        onCompleted: ({ login }) => {
-            console.log('YAY?')
-            // localStorage.setItem(AUTH_TOKEN, login.token);
-            // navigate('/');
-        },
-    })
-
-    const handleSubmit = evt => {
-        evt.preventDefault()
+    const loginUserCallback = () => {
+        setDisabled(true)
+        authenticate()
+        setDisabled(false)
     }
+
+    const { onChange, onSubmit, values } = useForm(loginUserCallback, {
+        $email: '',
+        $password: '',
+    })
+
+    const [authenticate] = useMutation(LOGIN_USER, {
+        update(_, { data: { authenticate: userData } }) {
+            console.log('USER DATA', userData)
+            context.login(userData)
+            navigate('/products')
+        },
+        onError({ graphQLErrors }) {
+            setErrors(graphQLErrors)
+        },
+        variables: {
+            $email: 'bob@example.com',
+            $password: 'password',
+        },
+    })
+
     return (
         <Layout>
             <div className="card">
                 <div className="heading-container">
                     <img src={logo} alt="Logo" />
-                    <p class="heading">Sign in</p>
+                    <p className="heading">Sign in</p>
                 </div>
-                <Input type="text" name="Email" label="Email" />
-                <Input type="password" name="Password" label="Password" />
-                <Button onClick={handleSubmit} disabled={false}>
+                <Input type="text" name="$email" label="Email" onChange={onChange} />
+                <Input type="password" name="$password" label="Password" onChange={onChange} />
+                <Button onClick={onSubmit} disabled={disable}>
                     Sign in
                 </Button>
                 <p className="forgot-password">Forgot password?</p>
