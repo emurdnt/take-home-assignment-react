@@ -1,6 +1,5 @@
 import React, { useReducer, createContext } from 'react'
 import { deleteTokens, getTokens, saveTokens } from '../utilities/helpers'
-// import { jwtDecode, JwtHeader } from 'jwt-decode'
 
 //need to type this
 type UserData = {
@@ -14,10 +13,10 @@ const initialState = {
     user: null,
 }
 
-if (localStorage.getItem('session') === '') {
+if (getTokens()) {
     const session = getTokens()
 
-    if (session.expiresAt * 1000 < Date.now()) {
+    if (Date.parse(session.expiresAt) * 1000 < Date.now()) {
         localStorage.removeItem('session')
     } else {
         initialState.user = { ...session, authenticated: true }
