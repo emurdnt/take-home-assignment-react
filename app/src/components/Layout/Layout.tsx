@@ -3,7 +3,7 @@ import './Layout.css'
 
 interface LayoutProps {
     backgroundColor: 'dark' | 'light' | 'grey'
-    children?: ReactElement
+    children?: React.ReactNode
     align: 'left' | 'center' | 'right'
 }
 

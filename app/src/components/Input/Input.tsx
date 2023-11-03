@@ -14,7 +14,14 @@ interface InputProps {
 
 /**
  *
- * @param type
+ * @param type accepts ''text' | 'number' | 'email' | 'password'
+ * @param label
+ * @param value
+ * @param name
+ * @param placeholder
+ * @param error
+ * @param disabled
+ * @param onChange input callback function
  * @returns
  */
 const Input: FC<InputProps> = ({ type, label, value, name, placeholder, error, disabled, onChange }: InputProps) => {

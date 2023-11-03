@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './Button.css'
+import load from '../../assets/loading.gif'
 
 interface ButtonProps {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-    children?: React.ReactNode
     color?: 'primary' | 'secondary'
     disabled?: boolean
+    loading?: boolean
+    label?: string
 }
 
-const Button = ({ onClick, children, color = 'primary', disabled }: ButtonProps) => {
+/**
+ *
+ * @param onClick callback function for button
+ * @param color accepts 'primary' or 'secondary'
+ * @param disabled disabled button
+ * @param loading shows loading icon when the process is on-going
+ * @param label button label
+ * @returns React.ReactNode
+ */
+const Button: FC<ButtonProps> = ({
+    onClick,
+    color = 'primary',
+    disabled,
+    loading = false,
+    label = 'button',
+}: ButtonProps) => {
     return (
         <div className={`button ${color}`} onClick={onClick} disabled={disabled}>
-            {children}
+            {loading ? <img src={load} /> : <span>{label}</span>}
         </div>
     )
 }
