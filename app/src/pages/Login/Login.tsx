@@ -2,24 +2,16 @@ import React, { useState, useContext } from 'react'
 import { gql, useMutation } from '@apollo/client'
 import Input from '../../components/Input/Input'
 import Layout from '../../components/Layout/Layout'
-import { Button } from '../../components/Button/Button'
+import Button from '../../components/Button/Button'
 import logo from '../../assets/Logo@2x.png'
 import './Login.css'
 import { useForm } from '../../utilities/useForm'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/authContext'
+import { LOGIN_USER } from '../../utilities/mutations'
 
-//need cleanup and error handling
+//  error handling and validation
 
-const LOGIN_USER = gql`
-    mutation {
-        authenticate(email: "bob@example.com", password: "password") {
-            accessToken
-            refreshToken
-            expiresAt
-        }
-    }
-`
 const Login = () => {
     const context = useContext(AuthContext)
     let navigate = useNavigate()
@@ -39,7 +31,7 @@ const Login = () => {
 
     const [authenticate] = useMutation(LOGIN_USER, {
         update(_, { data: { authenticate: userData } }) {
-            console.log('USER DATA', userData)
+            console.log('TESTING', userData)
             context.login(userData)
             navigate('/products')
         },
