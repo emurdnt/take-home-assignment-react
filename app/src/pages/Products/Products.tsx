@@ -4,25 +4,13 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/authContext'
 import { Navigate } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
-import logo from '../../assets/Logo@2x.png'
+import placeholder from '../../assets/Placeholder.png'
 import './Products.css'
-
-//move all gql to another file
-const ALL_PRODUCTS = gql`
-    query Products {
-        products {
-            id
-            title
-            description
-            price
-            currency
-        }
-    }
-`
+import { ALL_PRODUCTS } from '../../utilities/mutations'
+import NavBar from '../../components/Nav/Nav'
 
 const Products = () => {
     const { user } = useContext(AuthContext)
-    console.log('USER', user)
 
     const context = useContext(AuthContext)
     const [errors, setErrors] = useState([])
@@ -36,18 +24,21 @@ const Products = () => {
     if (error) return <p>Error :(</p>
 
     return (
-        <Layout>
-            <Link to="/">home</Link>
-            {data.products.map(product => {
-                return (
-                    <div className="product-container">
-                        <img src={logo} />
-                        <p>{product.title}</p>
-                        <p>{product.description}</p>
-                        <p>{product.price}</p>
-                    </div>
-                )
-            })}
+        <Layout align="left">
+            <NavBar />
+            <div className="product-container">
+                {data.products.map(product => {
+                    return (
+                        <div className="product">
+                            <img src={placeholder} className="product-img" />
+                            <p className="description">{product.description}</p>
+                            <p>
+                                {product.title} - {product.price}
+                            </p>
+                        </div>
+                    )
+                })}
+            </div>
         </Layout>
     )
 }
