@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
-    mutation {
-        authenticate(email: "bob@example.com", password: "password") {
+    mutation Login($email: String!, $password:String!) {
+        authenticate(email: $email, password: $password) {
             accessToken
             refreshToken
             expiresAt
