@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react'
-import { gql, useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/client'
+import { useNavigate } from 'react-router-dom'
 import Input from '../../components/Input/Input'
 import Layout from '../../components/Layout/Layout'
 import Button from '../../components/Button/Button'
 import logo from '../../assets/Logo.png'
-import './Login.css'
 import { useForm } from '../../utilities/useForm'
-import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/authContext'
 import { LOGIN_USER } from '../../utilities/mutations'
+import './Login.css'
 
 const Login = () => {
     const context = useContext(AuthContext)
