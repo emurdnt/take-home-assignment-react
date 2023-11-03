@@ -3,6 +3,7 @@ import './Nav.css'
 import logo from '../../assets/Logo.png'
 import { Link } from 'react-router-dom'
 
+//need to show and hide things according to if they are logged in or not
 const NavBar = (): ReactElement => {
     return (
         <div className="nav-container">
@@ -13,6 +14,9 @@ const NavBar = (): ReactElement => {
                 </Link>
                 <Link to="/login" className="link">
                     Login
+                </Link>
+                <Link to="/logout" className="link">
+                    Logout
                 </Link>
             </div>
         </div>

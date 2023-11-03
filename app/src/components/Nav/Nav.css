@@ -7,12 +7,12 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: left;
+    align-self: flex-start;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 .link-container {
     margin: 8px 32px;
-    width: 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,6 +24,8 @@
     font-weight: 600;
     font-style: normal;
     align-self: center;
+    margin-left: 16px;
+    font-size: 16px;
 }
 
 .link:hover {

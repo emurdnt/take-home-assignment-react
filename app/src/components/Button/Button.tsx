@@ -8,10 +8,12 @@ interface ButtonProps {
     disabled?: boolean
 }
 
-export const Button = ({ onClick, children, color = 'primary', disabled }: ButtonProps) => {
+const Button = ({ onClick, children, color = 'primary', disabled }: ButtonProps) => {
     return (
         <div className={`button ${color}`} onClick={onClick} disabled={disabled}>
             {children}
         </div>
     )
 }
+
+export default Button

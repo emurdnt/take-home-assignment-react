@@ -14,7 +14,7 @@ interface LayoutProps {
  * @returns React component
  */
 const Layout = ({ backgroundColor = 'grey', children, align = 'center' }: LayoutProps): ReactElement => {
-    return <div className={`full-width ${backgroundColor} ${align}`}>{children}</div>
+    return <div className={`full-width ${backgroundColor} ${align} `}>{children}</div>
 }
 
 export default Layout

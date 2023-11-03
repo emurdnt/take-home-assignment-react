@@ -14,7 +14,7 @@ interface InputProps {
 
 /**
  *
- * @param param0
+ * @param type
  * @returns
  */
 const Input: FC<InputProps> = ({ type, label, value, name, placeholder, error, disabled, onChange }: InputProps) => {
