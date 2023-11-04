@@ -26,7 +26,7 @@ const Products = () => {
 
     return (
         <Layout align="left">
-            <NavBar />
+            <NavBar ative="Products" />
             {error ? (
                 <div className="error-container">
                     {errors.map((err, idx) => (

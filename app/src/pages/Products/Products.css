@@ -37,3 +37,7 @@ p {
 .message-container {
     width: 100vw;
 }
+
+.active {
+    color: #9a4ad6;
+}

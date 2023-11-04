@@ -1,10 +1,14 @@
-import React, { ReactElement, useContext } from 'react'
+import React, { FC, ReactElement, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Nav.css'
 import logo from '../../assets/Logo.png'
 import { AuthContext } from '../../context/authContext'
 
-const NavBar = (): ReactElement => {
+interface NavProps {
+    active?: 'Products' | 'None'
+}
+
+const NavBar: FC<NavProps> = ({ active }): ReactElement => {
     let navigate = useNavigate()
     const { user, logout } = useContext(AuthContext)
 
