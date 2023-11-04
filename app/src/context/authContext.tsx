@@ -12,7 +12,6 @@ const initialState = {
 }
 
 if (localStorage.getItem('SESSION')) {
-    console.log('BUG', localStorage.getItem('SESSION'))
     const session = getTokens()
     if (Date.parse(session.expiresAt) < Date.now()) {
         deleteTokens()
