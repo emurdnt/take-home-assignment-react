@@ -1,15 +1,21 @@
 # Rover React Assignment
 
-Welcome and thank you for taking the time to complete the Rover take-home assignment.
+This is a take home assignment in React and GraphQL. This is the first time I've ever used GraphQL. It was challenging to learn it in a week but I had fun building this. I built a custom hook called useForm to manage the login form.
 
-You will have 4 days to complete the assignment. Once you have completed your solution, please reply with a link to a github repository.
+## Screenshots
 
-The goal of this assignment is to build the Rover login page with public and protected routes.
+-   Home (/)
 
-## Prerequisite
+-   Login (/login)
 
--   Docker (https://docs.docker.com/get-docker)
--   Yarn
+-   Products (/products)
+
+## Reuseable components
+
+-   Input
+-   Button
+-   Layout
+-   Nav
 
 ## Running the stack
 
@@ -17,17 +23,16 @@ The goal of this assignment is to build the Rover login page with public and pro
 docker-compose up
 ```
 
-You can now access the frontend via http://localhost:3000 and the backend via http://localhost:8080 (explore the GraphQL API http://localhost:8080/graphql). Refer to [database.sql](./database.sql) for dummy data and login credentials.
+You can now access the frontend via http://localhost:3000.
 
-# Requirements
+## Challenges
 
--   build reusable components based on the design
--   build the `/login` page described in the [design](./design/login-measurments.png)
--   A simple page `/products` that lists the products with a button to logout. There are no design requirements here
--   A Home page `/` with a simple button to go to `/login`
--   Add protected and public routes:
-    -   `/`: public anyone can view this page
-    -   `/login`: if a user is already signed in redirect to `/products`
-    -   `/products`: a user must be signed in to view
--   You can use either the Rest or the GraphQL API
--   Handle When a session expires by refreshing the session and retrying the same request that failed due to session expiry. To help test this flow you can run the following command that will expire all sessions (refresh tokens are still valid after expiring): `docker-compose run --rm postgres psql -U postgres dev -c "UPDATE sessions SET expires_at = now()"`
+-   I had a hard time testing the session epxiry due to a port error:
+
+````psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?```
+
+I spent a good few hours fixing this port issue on my computer but I was unsuccessful.
+
+
+````
