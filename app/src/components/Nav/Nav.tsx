@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './Nav.css'
 import logo from '../../assets/Logo.png'
-import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/authContext'
 
 const NavBar = (): ReactElement => {
@@ -15,7 +15,9 @@ const NavBar = (): ReactElement => {
 
     return (
         <div className="nav-container">
-            <img src={logo} className="logo" />
+            <Link to="/">
+                <img src={logo} className="logo" alt="Judo logo" />
+            </Link>
             <div className="link-container">
                 <Link to="/products" className="link">
                     Product
@@ -25,7 +27,7 @@ const NavBar = (): ReactElement => {
                         Login
                     </Link>
                 ) : (
-                    <Link to="/logout" className="link" onClick={onLogout}>
+                    <Link to="/" className="link" onClick={onLogout}>
                         Logout
                     </Link>
                 )}

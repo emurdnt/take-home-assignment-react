@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { FC } from 'react'
 import './Layout.css'
 
 interface LayoutProps {
@@ -11,9 +11,10 @@ interface LayoutProps {
  * Layout component to set wrapper of the page
  * @param backgroundColor accepts 'light', 'dark', or 'grey'
  * @param align accepts 'left', 'center', or 'right'
+ * @param children children elements
  * @returns React component
  */
-const Layout = ({ backgroundColor = 'grey', children, align = 'center' }: LayoutProps): ReactElement => {
+const Layout: FC<LayoutProps> = ({ backgroundColor = 'grey', children, align = 'center' }) => {
     return <div className={`full-width ${backgroundColor} ${align} `}>{children}</div>
 }
 

@@ -1,8 +1,8 @@
 .nav-container {
     height: 50px;
-    min-width: 100%;
+    width: 100vw;
     padding: 8px;
-    background-color: #9a4ad6;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -12,14 +12,14 @@
 }
 
 .link-container {
-    margin: 8px 32px;
+    margin: 8px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .link {
-    color: #fff;
+    color: #676487;
     font-family: 'source-sans-pro', sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -29,5 +29,5 @@
 }
 
 .link:hover {
-    color: #fefefe;
+    color: #4d4b67;
 }
