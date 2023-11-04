@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { useMutation } from '@apollo/client'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import Input from '../../components/Input/Input'
 import Layout from '../../components/Layout/Layout'
 import Button from '../../components/Button/Button'
@@ -46,7 +46,9 @@ const Login = () => {
         <Layout>
             <div className="card">
                 <div className="heading-container">
-                    <img src={logo} alt="Judo logo" />
+                    <Link to="/">
+                        <img src={logo} alt="Judo logo" />
+                    </Link>
                     <p className="heading">Sign in</p>
                 </div>
                 <Input type="text" name="email" label="Email" onChange={onChange} />
