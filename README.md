@@ -85,7 +85,7 @@ psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" 
 	Is the server running locally and accepting connections on that socket?
 ```
 
-I spent a good few hours fixing this port issue on my computer but I was unsuccessful.
+I spent a good few hours fixing this port issue on my computer but I was unsuccessful. So the session-expiring task is untested but I implemented the task. 
 
 ## Assumptions
 
