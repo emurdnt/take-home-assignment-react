@@ -47,7 +47,7 @@ const Login = () => {
             <div className="card">
                 <div className="heading-container">
                     <Link to="/">
-                        <img src={logo} alt="Judo logo" />
+                        <img src={logo} alt="Judo logo" className="login-logo" />
                     </Link>
                     <p className="heading">Sign in</p>
                 </div>
