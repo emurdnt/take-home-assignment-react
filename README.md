@@ -4,14 +4,17 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 
 ## Screenshots
 
--   Home (/)
+-   Home (/) - I added a nav bar where the users can go to the Products or Login.
     ![home page](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-home.png)
 
 -   Login (/login)
     ![login](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-login.png)
 
--   Products (/products)
+-   Products (/products) - I added a logout function to clear the cookies. 
     ![products](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-product.png)
+
+- Login Error - created a subtle error messaging in the login page
+- Product Page Error - added messaging for when the app fails to grab the products.
 
 ## Reuseable components
 
