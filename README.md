@@ -1,6 +1,6 @@
 # Rover React Assignment
 
-This is a take home assignment in React and GraphQL. This is the first time I've ever used GraphQL. It was challenging to learn it in a week but I had fun building this. I built a custom hook called useForm to manage the login form.
+This is a take home assignment in React and GraphQL. It's my first time ever using GraphQL. It was challenging to learn it in a week but I had fun building this. I built a custom hook called useForm to manage the login form.
 
 ## Screenshots
 
@@ -12,10 +12,48 @@ This is a take home assignment in React and GraphQL. This is the first time I've
 
 ## Reuseable components
 
--   Input
--   Button
+-   Input:
+
+```
+/**
+ *
+ * @param type accepts ''text' | 'number' | 'email' | 'password'
+ * @param label
+ * @param value
+ * @param name
+ * @param placeholder
+ * @param error
+ * @param disabled
+ * @param onChange input callback function
+ * @returns
+ */
+```
+
+-   Button:
+
+```
+/**
+ *
+ * @param onClick callback function for button
+ * @param color accepts 'primary' or 'secondary'
+ * @param disabled disabled button
+ * @param loading shows loading icon when the process is on-going
+ * @param label button label
+ * @returns React.ReactNode
+ */
+```
+
 -   Layout
--   Nav
+
+```
+/**
+ * Layout component to set wrapper of the page
+ * @param backgroundColor accepts 'light', 'dark', or 'grey'
+ * @param align accepts 'left', 'center', or 'right'
+ * @param children children elements
+ * @returns React component
+ */
+```
 
 ## Running the stack
 
@@ -35,7 +73,3 @@ psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" 
 ```
 
 I spent a good few hours fixing this port issue on my computer but I was unsuccessful.
-
-```
-
-```
