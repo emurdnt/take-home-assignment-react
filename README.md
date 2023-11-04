@@ -1,6 +1,6 @@
 # Rover React Assignment
 
-This is a take home assignment in React and GraphQL. It's my first time ever using GraphQL. It was challenging to learn it in a week but I had fun building this. I built a custom hook called useForm to manage the login form. I also added basic error handling to the login and products pages.
+This is a take home assignment in React and GraphQL. It's my first time ever using GraphQL. It was challenging to learn it in a week but I want to challenge myself and prove that I can learn anything. I built a custom hook called useForm to manage the login form. I also added basic error handling to the login and products pages.
 
 ## Screenshots
 
@@ -72,7 +72,7 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 docker-compose up
 ```
 
-You can now access the frontend via http://localhost:3000.
+You can now access the front end via http://localhost:3000.
 Use the following accounts to login:
 `email: bob@example.com password:password `
 
@@ -85,7 +85,7 @@ psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" 
 	Is the server running locally and accepting connections on that socket?
 ```
 
-I spent a good few hours fixing this port issue on my computer but I was unsuccessful.
+I spent a good few hours fixing this port issue on my computer but I was unsuccessful. So the session-expiring task is untested but I implemented the task. 
 
 ## Assumptions
 
