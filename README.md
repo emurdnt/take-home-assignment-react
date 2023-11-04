@@ -10,11 +10,12 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 -   Login (/login)
     ![login](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-login.png)
 
--   Products (/products) - I added a logout function to clear the cookies. 
+-   Products (/products) - I added a logout function to clear the cookies.
     ![products](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-product.png)
 
-- Login Error - created a subtle error messaging in the login page
-- Product Page Error - added messaging for when the app fails to grab the products.
+-   Login Error - created a subtle error messaging in the login page
+    ![error login](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-error-login.png)
+-   Product Page Error - added messaging for when the app fails to grab the products.
 
 ## Reuseable components
 
