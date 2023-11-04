@@ -7,14 +7,24 @@
     font-size: 14px;
     line-height: 24px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'source-sans-pro', sans-serif;
     font-weight: 700;
     font-style: normal;
+    color: #fff;
 }
 
 .primary {
     background-color: #9a4ad6;
-    color: #fff;
+}
+
+.secondary {
+    background-color: #575558;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
 }

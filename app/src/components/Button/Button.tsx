@@ -28,7 +28,7 @@ const Button: FC<ButtonProps> = ({
 }: ButtonProps) => {
     return (
         <div className={`button ${color}`} onClick={onClick} disabled={disabled}>
-            {loading ? <img src={load} /> : <span>{label}</span>}
+            {loading ? <img src={load} alt="loading text" className="loader" /> : <span>{label}</span>}
         </div>
     )
 }
