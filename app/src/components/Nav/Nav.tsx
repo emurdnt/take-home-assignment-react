@@ -4,11 +4,7 @@ import './Nav.css'
 import logo from '../../assets/Logo.png'
 import { AuthContext } from '../../context/authContext'
 
-interface NavProps {
-    active?: 'Products' | 'None'
-}
-
-const NavBar: FC<NavProps> = (): ReactElement => {
+const NavBar: FC = (): ReactElement => {
     let navigate = useNavigate()
     const { user, logout } = useContext(AuthContext)
 
