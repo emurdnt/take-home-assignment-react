@@ -69,7 +69,8 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 docker-compose up
 ```
 
-You can now access the frontend via http://localhost:3000.
+You can now access the frontend via http://localhost:3000. Use the following accounts to login:
+`email: bob@example.com password:password `
 
 ## Challenges
 

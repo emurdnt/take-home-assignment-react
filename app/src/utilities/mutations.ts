@@ -22,10 +22,3 @@ export const ALL_PRODUCTS = gql`
     }
 `
 
-export const REFRESH_SESSION = gql`
-    refreshSession(accessToken: String!, refreshToken: String!) {
-        accessToken
-        refreshToken
-        expiresAt
-    }
-`
