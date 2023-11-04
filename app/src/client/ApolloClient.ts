@@ -1,10 +1,28 @@
 import { ApolloClient, InMemoryCache, createHttpLink, from, fromPromise, gql} from "@apollo/client";
 import {onError} from "@apollo/client/link/error";
 import { setContext } from "@apollo/client/link/context";
-import { getTokens } from "../utilities/helpers";
+import { getTokens, saveTokens } from "../utilities/helpers";
+import { graphQLURL } from "../utilities/constants";
 
-//need to update contet after refreshing tokens
-//how do I do that?
+
+const httpLink = createHttpLink({
+  uri:graphQLURL
+})
+
+const authLink = setContext((_, {headers}) =>{
+  const tokens = getTokens();
+
+  return {
+    headers:{
+      ...headers,
+      testing: "WTF",
+      authorization:tokens ?  `Bearer ${tokens.accessToken}` : ''
+    }
+  }
+
+})
+
+
 let isRefreshing = false;
 let pendingRequests: any = [];
 
@@ -43,6 +61,7 @@ const errorLink = onError(
                   }
                   })
                   .then(({ data: { refreshToken } }) => {
+                    saveTokens(data)
                     return true;
                   })
                   .then(() => {
@@ -78,26 +97,6 @@ const errorLink = onError(
   }
 );
 
-
-
-
-const httpLink = createHttpLink({
-  uri:"http://localhost:8080/graphql"
-})
-
-
-
-const authLink = setContext((_, {headers}) =>{
-  const tokens = getTokens();
-
-  return {
-    headers:{
-      ...headers,
-      authorization:tokens.accessToken ?  `Bearer ${tokens.accessToken}` : ''
-    }
-  }
-
-})
 
 export const client = new ApolloClient({
   link: from([errorLink,authLink,httpLink]),
