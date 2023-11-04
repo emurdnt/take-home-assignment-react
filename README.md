@@ -13,6 +13,9 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 -   Products (/products) - I added a logout function to clear the cookies.
     ![products](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-product.png)
 
+-   Nav - Users can navigate between all the pages
+    ![nav](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-nav.png)
+
 -   Login Error - created a subtle error messaging in the login page
     ![error login](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-error-login.png)
 -   Product Page Error - added messaging for when the app fails to grab the products.
