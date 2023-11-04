@@ -29,10 +29,13 @@ You can now access the frontend via http://localhost:3000.
 
 -   I had a hard time testing the session epxiry due to a port error:
 
-````psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
-	Is the server running locally and accepting connections on that socket?```
+```
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+```
 
 I spent a good few hours fixing this port issue on my computer but I was unsuccessful.
 
+```
 
-````
+```
