@@ -8,7 +8,7 @@ interface NavProps {
     active?: 'Products' | 'None'
 }
 
-const NavBar: FC<NavProps> = ({ active }): ReactElement => {
+const NavBar: FC<NavProps> = (): ReactElement => {
     let navigate = useNavigate()
     const { user, logout } = useContext(AuthContext)
 
