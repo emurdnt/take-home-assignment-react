@@ -1,29 +1,26 @@
 import React, { useReducer, createContext } from 'react'
 import { deleteTokens, getTokens, saveTokens } from '../utilities/helpers'
 
-//need to type this
 type UserData = {
     accessToken: string
     expiresAt: string
     refreshToken: string
-    authenticated: boolean
 }
 
 const initialState = {
     user: null,
 }
 
-if (getTokens()) {
+if (localStorage.getItem('SESSION')) {
+    console.log('BUG', localStorage.getItem('SESSION'))
     const session = getTokens()
-
-    if (Date.parse(session.expiresAt) * 1000 < Date.now()) {
-        localStorage.removeItem('session')
+    if (Date.parse(session.expiresAt) < Date.now()) {
+        deleteTokens()
     } else {
-        initialState.user = { ...session, authenticated: true }
+        initialState.user = session
     }
 }
 
-//need to type
 const AuthContext = createContext({
     user: null,
     login: (userData: UserData) => {},
@@ -47,7 +44,11 @@ function authReducer(state, action) {
     }
 }
 
-function AuthProvider({ children }) {
+interface AuthProviderProps {
+    children: React.ReactNode
+}
+
+const AuthProvider = ({ children }: AuthProviderProps) => {
     const [state, dispatch] = useReducer(authReducer, initialState)
 
     const login = (userData: UserData) => {
