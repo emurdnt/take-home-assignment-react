@@ -16,6 +16,7 @@ const Products = () => {
         return <Navigate to="/login" replace />
     }
 
+    //Add rollbar here in the future
     const { error, data } = useQuery(ALL_PRODUCTS, {
         onError({ graphQLErrors }: any) {
             console.log('ERROR:', graphQLErrors)

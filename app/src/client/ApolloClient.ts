@@ -59,7 +59,7 @@ const errorLink = onError(
                     refreshTokens: tokens.refreshToken,
                   }
                   })
-                  .then(({ data: { refreshToken } }) => {
+                  .then(({ data}) => {
                     saveTokens(data)
                     return true;
                   })
