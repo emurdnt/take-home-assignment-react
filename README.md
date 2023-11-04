@@ -5,13 +5,13 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 ## Screenshots
 
 -   Home (/)
-    ![home page] (https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-home.png)
+    ![home page](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-home.png)
 
 -   Login (/login)
     ![login](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-login.png)
 
 -   Products (/products)
-    ![products] (https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-product.png)
+    ![products](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-product.png)
 
 ## Reuseable components
 
