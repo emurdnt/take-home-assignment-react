@@ -87,7 +87,7 @@ psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" 
 
 I spent a good few hours fixing this port issue on my computer but I was unsuccessful.
 
-##Assumptions
+## Assumptions
 
 -   There is a measurement provided for the logo on the Login which is 143 x 24px. The resulting image looked wonky so I decided to just leave it.
 
