@@ -3,6 +3,7 @@ import {onError} from "@apollo/client/link/error";
 import { setContext } from "@apollo/client/link/context";
 import { getTokens, saveTokens } from "../utilities/helpers";
 import { graphQLURL } from "../utilities/constants";
+import { REFRESH_SESSION } from "../utilities/mutations";
 
 
 const httpLink = createHttpLink({
@@ -45,19 +46,11 @@ const errorLink = onError(
               forward$ = fromPromise(
                 client
                   .mutate({
-                    mutation: gql`
-                    mutation {
-                      refreshSession(accessToken: String!, refreshToken: String!) {
-                          accessToken
-                          refreshToken
-                          expiresAt
-                      }
-                  }
-                    `,
-                  variables:{
-                    accessToken: tokens.accessToken,
-                    refreshTokens: tokens.refreshToken,
-                  }
+                    mutation: REFRESH_SESSION,
+                    variables:{
+                      accessToken: tokens.accessToken,
+                      refreshTokens: tokens.refreshToken,
+                    }
                   })
                   .then(({ data}) => {
                     saveTokens(data)
