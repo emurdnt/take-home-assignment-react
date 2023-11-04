@@ -23,8 +23,8 @@ const Login = () => {
     }
 
     const { onChange, onSubmit, values } = useForm(loginUserCallback, {
-        $email: '',
-        $password: '',
+        email: '',
+        password: '',
     })
 
     const [authenticate, { error, loading }] = useMutation(LOGIN_USER, {
@@ -36,7 +36,7 @@ const Login = () => {
             context.login(userData)
             navigate('/products')
         },
-        onError({ graphQLErrors }) {
+        onError({ graphQLErrors }: any) {
             setErrors(graphQLErrors)
             console.log('ERROR:', graphQLErrors)
         },
@@ -46,7 +46,7 @@ const Login = () => {
         <Layout>
             <div className="card">
                 <div className="heading-container">
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} alt="Judo logo" />
                     <p className="heading">Sign in</p>
                 </div>
                 <Input type="text" name="email" label="Email" onChange={onChange} />

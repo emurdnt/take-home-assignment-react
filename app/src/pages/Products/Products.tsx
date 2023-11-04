@@ -16,20 +16,18 @@ const Products = () => {
         return <Navigate to="/login" replace />
     }
 
-    const { loading, error, data } = useQuery(ALL_PRODUCTS, {
+    const { error, data } = useQuery(ALL_PRODUCTS, {
         onError({ graphQLErrors }: any) {
             console.log('ERROR:', graphQLErrors)
             setErrors(graphQLErrors)
         },
     })
 
-    if (loading) return <p>Loading...</p>
-
     return (
         <Layout align="left">
             <NavBar />
             {error ? (
-                <div className="product-container">
+                <div className="error-container">
                     {errors.map((err, idx) => (
                         <p className="error" key={idx}>
                             {err.message}
@@ -38,10 +36,14 @@ const Products = () => {
                 </div>
             ) : (
                 <div className="product-container">
-                    {data.products.map((product, idx) => {
+                    {data?.products?.map((product, idx) => {
                         return (
                             <div key={idx} className="product">
-                                <img src={placeholder} className="product-img" />
+                                <img
+                                    src={placeholder}
+                                    className="product-img"
+                                    alt="product image placeholder with a grey background"
+                                />
                                 <p className="description">{product.description}</p>
                                 <p>
                                     {product.title} - {product.price}
