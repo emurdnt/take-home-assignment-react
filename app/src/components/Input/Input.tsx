@@ -4,10 +4,10 @@ import './Input.css'
 interface InputProps {
     type: 'text' | 'number' | 'email' | 'password'
     label: string
-    value: string | number
+    value?: string | number
     name: string
     placeholder: string
-    error: boolean
+    error?: boolean
     disabled?: boolean
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }

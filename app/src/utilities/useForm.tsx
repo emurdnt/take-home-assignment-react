@@ -8,9 +8,15 @@ import { useState, ChangeEvent } from 'react'
  */
 export const useForm = (callback: () => {}, initialState = {}) => {
     const [values, setValues] = useState(initialState)
+    const [valid, setValid] = useState(true)
 
     const onChange = (event: ChangeEvent) => {
-        setValues({ ...values, [event.target.name]: event.target.value })
+        if (!event.target.value) {
+            setValid(false)
+        } else {
+            setValid(true)
+            setValues({ ...values, [event.target.name]: event.target.value })
+        }
     }
 
     const onSubmit = (event: MouseEvent) => {
@@ -18,5 +24,5 @@ export const useForm = (callback: () => {}, initialState = {}) => {
         callback()
     }
 
-    return { onChange, onSubmit, values }
+    return { onChange, onSubmit, values, valid }
 }

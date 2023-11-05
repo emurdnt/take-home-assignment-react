@@ -17,17 +17,21 @@ const Login = () => {
     const [disable, setDisabled] = useState(false)
 
     const loginUserCallback = () => {
-        setDisabled(true)
-        authenticate()
-        setDisabled(false)
+        if (valid) {
+            setDisabled(true)
+            authenticate()
+            setDisabled(false)
+        } else {
+            setErrors([{ message: 'Email and password are required.' }])
+        }
     }
 
-    const { onChange, onSubmit, values } = useForm(loginUserCallback, {
+    const { onChange, onSubmit, values, valid } = useForm(loginUserCallback, {
         email: '',
         password: '',
     })
 
-    const [authenticate, { error, loading }] = useMutation(LOGIN_USER, {
+    const [authenticate, { loading }] = useMutation(LOGIN_USER, {
         variables: {
             email: values.email,
             password: values.password,
@@ -51,16 +55,15 @@ const Login = () => {
                     </Link>
                     <p className="heading">Sign in</p>
                 </div>
-                <Input type="text" name="email" label="Email" onChange={onChange} />
-                <Input type="password" name="password" label="Password" onChange={onChange} />
+                <Input type="text" name="email" label="Email" onChange={onChange} placeholder="Email" />
+                <Input type="password" name="password" label="Password" onChange={onChange} placeholder="Password" />
                 <Button onClick={onSubmit} disabled={disable} loading={loading} label="Sign In" />
                 <p className="forgot-password">Forgot password?</p>
-                {error &&
-                    errors.map((err, idx) => (
-                        <p className="error" key={idx}>
-                            {err.message}
-                        </p>
-                    ))}
+                {errors.map((err, idx) => (
+                    <p className="error" key={idx}>
+                        {err.message}
+                    </p>
+                ))}
             </div>
             <p className="disclaimer">
                 &copy;2001-20019 All Rights Reserved. Clip &trade; is a registered trademark of Rover Labs, Cookie

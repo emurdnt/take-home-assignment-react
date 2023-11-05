@@ -2,9 +2,9 @@ import React, { FC } from 'react'
 import './Layout.css'
 
 interface LayoutProps {
-    backgroundColor: 'dark' | 'light' | 'grey'
+    backgroundColor?: 'dark' | 'light' | 'grey'
     children?: React.ReactNode
-    align: 'left' | 'center' | 'right'
+    align?: 'left' | 'center' | 'right'
 }
 
 /**
