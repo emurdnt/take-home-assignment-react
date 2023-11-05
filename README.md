@@ -1,6 +1,6 @@
 # Rover React Assignment
 
-This is a take home assignment in React and GraphQL. It's my first time ever using GraphQL. It was challenging to learn it in a week but I want to challenge myself and prove that I can learn anything. I built a custom hook called useForm to manage the login form. I also added basic error handling to the login and products pages.
+This is a take-home assignment in React and GraphQL. It's my first time ever using GraphQL. It was not a breeze to learn it in a week but I want to challenge myself and prove that I can learn anything. I built a custom hook called useForm to manage the login form. I also added basic error handling to the login and product pages.
 
 ## Screenshots
 
@@ -18,8 +18,12 @@ This is a take home assignment in React and GraphQL. It's my first time ever usi
 
 -   Login Error - created a subtle error messaging in the login page
     ![error login](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-error-login.png)
+    
 -   Product Page Error - added messaging for when the app fails to grab the products.
     ![error products](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-error-product.png)
+    
+-  Login Loading - added a loader to the sign in screen
+  ![loader](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-login-loading.png)
 
 ## Reuseable components
 
