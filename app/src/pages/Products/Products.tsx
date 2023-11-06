@@ -30,7 +30,7 @@ const Products = () => {
             {error ? (
                 <div className="error-container">
                     {errors.map((err, idx) => (
-                        <p className="error" key={idx}>
+                        <p className="product-error" key={idx}>
                             {err.message}
                         </p>
                     ))}

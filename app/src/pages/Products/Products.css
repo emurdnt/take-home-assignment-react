@@ -41,3 +41,13 @@ p {
 .active {
     color: #9a4ad6;
 }
+
+.product-error {
+    font-family: 'source-sans-pro', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #676487;
+    font-size: 14px;
+    text-align: center;
+    padding: 16px;
+}
