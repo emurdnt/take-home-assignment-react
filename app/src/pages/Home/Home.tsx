@@ -1,9 +1,10 @@
+import { FC, ReactElement } from 'react'
 import Layout from '../../components/Layout/Layout'
 import NavBar from '../../components/Nav/Nav'
 import home from '../../assets/Home.png'
 import './Home.css'
 
-const Home = () => {
+const Home: FC = (): ReactElement => {
     return (
         <Layout backgroundColor="grey" align="left">
             <NavBar />

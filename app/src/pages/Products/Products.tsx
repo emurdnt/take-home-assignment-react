@@ -1,14 +1,14 @@
-import Layout from '../../components/Layout/Layout'
-import { useContext, useState } from 'react'
-import { AuthContext } from '../../context/authContext'
+import { FC, ReactElement, useContext, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
+import Layout from '../../components/Layout/Layout'
+import { AuthContext } from '../../context/authContext'
 import placeholder from '../../assets/Placeholder.png'
 import { ALL_PRODUCTS } from '../../utilities/mutations'
 import NavBar from '../../components/Nav/Nav'
 import './Products.css'
 
-const Products = () => {
+const Products: FC = (): ReactElement => {
     const { user } = useContext(AuthContext)
     const [errors, setErrors] = useState([])
 

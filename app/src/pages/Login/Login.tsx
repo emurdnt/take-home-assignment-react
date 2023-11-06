@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import { FC, useState, useContext, ReactElement } from 'react'
 import { useMutation } from '@apollo/client'
 import { useNavigate, Link } from 'react-router-dom'
 import Input from '../../components/Input/Input'
@@ -10,10 +10,10 @@ import { AuthContext } from '../../context/authContext'
 import { LOGIN_USER } from '../../utilities/mutations'
 import './Login.css'
 
-const Login = () => {
+const Login: FC = (): ReactElement => {
     const context = useContext(AuthContext)
     let navigate = useNavigate()
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState([{}])
     const [disable, setDisabled] = useState(false)
 
     const loginUserCallback = () => {
@@ -22,7 +22,7 @@ const Login = () => {
             authenticate()
             setDisabled(false)
         } else {
-            setErrors([{ message: 'Email and password are required.' }])
+            setErrors([{ ...errors, message: 'Email and password are required.' }])
         }
     }
 
@@ -59,11 +59,12 @@ const Login = () => {
                 <Input type="password" name="password" label="Password" onChange={onChange} placeholder="Password" />
                 <Button onClick={onSubmit} disabled={disable} loading={loading} label="Sign In" />
                 <p className="forgot-password">Forgot password?</p>
-                {errors.map((err, idx) => (
-                    <p className="error" key={idx}>
-                        {err.message}
-                    </p>
-                ))}
+                {errors.length &&
+                    errors.map((err, idx) => (
+                        <p className="error" key={idx}>
+                            {err.message}
+                        </p>
+                    ))}
             </div>
             <p className="disclaimer">
                 &copy;2001-20019 All Rights Reserved. Clip &trade; is a registered trademark of Rover Labs, Cookie
