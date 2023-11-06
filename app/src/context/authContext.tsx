@@ -7,6 +7,11 @@ type UserData = {
     refreshToken: string
 }
 
+type Reducer = {
+    type: 'LOGIN' | 'LOGOUT'
+    payload: UserData
+}
+
 const initialState = {
     user: null,
 }
@@ -26,7 +31,7 @@ const AuthContext = createContext({
     logout: () => {},
 })
 
-function authReducer(state, action) {
+const authReducer = (state: UserData, action: Reducer) => {
     switch (action.type) {
         case 'LOGIN':
             return {

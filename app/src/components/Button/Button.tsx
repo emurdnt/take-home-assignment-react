@@ -3,7 +3,7 @@ import './Button.css'
 import load from '../../assets/loading.gif'
 
 interface ButtonProps {
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+    onClick?: (event: MouseEvent) => void
     color?: 'primary' | 'secondary'
     disabled?: boolean
     loading?: boolean
