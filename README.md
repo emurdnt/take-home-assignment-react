@@ -94,3 +94,5 @@ I spent a good few hours fixing this port issue on my computer but I was unsucce
 -   There is a measurement provided for the logo on the Login which is 143 x 24px. The resulting image looked wonky so I decided to just leave it.
 
 ![logo](https://github.com/emurdnt/take-home-assignment-react/blob/master/app/src/assets/ss-login-logo.png)
+
+-   When a user enters a correct password but an incorrect email or vice versa, the backend never throws an error. I do have a catch for errors however since no error is thrown it is stuck in loading limbo.
