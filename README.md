@@ -1,6 +1,6 @@
 # Rover React Assignment
 
-This is a take-home assignment in React and GraphQL. It's my first time ever using GraphQL. It was not a breeze to learn it in a few days but I want to challenge myself and prove that I can learn anything. I built a custom hook called useForm to manage the login form. I added basic error handling to the login and product pages. I also added basic validation for the login screen.
+This is a project in React and GraphQL. It's my first time using GraphQL. It was not a breeze to learn it in a few days but I want to challenge myself and prove that I can learn anything. I built a custom hook called useForm to manage the login form. I added basic error handling to the login and product pages. I also added basic validation for the login screen.
 
 ## Screenshots
 
